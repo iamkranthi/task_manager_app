@@ -9,7 +9,7 @@ class HeadText extends StatelessWidget {
       "TASK MANAGER",
       textScaleFactor: 1.1,
       style: TextStyle(
-        color: Colors.white,
+        //color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
     );

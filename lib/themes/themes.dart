@@ -5,7 +5,8 @@ import 'package:task_manager_app/themes/constant_colors.dart';
 class Themes{
   static final light =ThemeData(
     primaryColor: Constantcolors.appbarColor,
-    brightness: Brightness.light,
+   brightness: Brightness.light,
+    backgroundColor: Colors.green
   );
    static final dark =ThemeData(
     primaryColor: Colors.black,
