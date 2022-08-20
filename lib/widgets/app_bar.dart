@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager_app/notifications/notifications.dart';
-import 'package:task_manager_app/themes/theme_service.dart';
-import 'package:get/get.dart';
+import 'package:task_manager_app/themes/constant_colors.dart';
 
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -19,7 +17,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.lightBlueAccent,
+        color: Constantcolors.lightBackgroundColor,
         boxShadow: const [
           BoxShadow(
             color: Colors.white,
@@ -29,21 +27,10 @@ class _CustomAppBarState extends State<CustomAppBar> {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          GestureDetector(
-              onTap: () {
-                ThemeService().switchTheme();
-
-                NotifyHelper().displayNotification(
-                    title: "Theme changed",
-                    body: Get.isDarkMode
-                        ? "Activated light mode"
-                        : "Activated dark mode");
-                NotifyHelper().scheduledNotification();
-              },
-              child: const Icon(Icons.ac_unit)), //!need to change with logo
-          const SizedBox(width: 22),
-          const Icon(Icons.person)
+        children: const[
+          Icon(Icons.ac_unit,color: Colors.black), 
+          SizedBox(width: 22),
+          Icon(Icons.person,color: Colors.black54,)
         ],
       ),
     );
