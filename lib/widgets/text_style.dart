@@ -18,3 +18,22 @@ TextStyle get headingStyle {
     ),
   );
 }
+
+TextStyle get titleStyle {
+  return GoogleFonts.lato(
+    textStyle: const TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w400,
+    ),
+  );
+}
+
+TextStyle get subtitleStyle {
+  return GoogleFonts.lato(
+    textStyle: const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+    ),
+  );
+}
+

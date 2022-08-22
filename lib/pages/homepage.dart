@@ -26,11 +26,13 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
         SizedBox(height: 60),
         Header(),
         SizedBox(height: 18),
-        CustomAppBar()
+        CustomAppBar(),
+        
       ],
     ));
   }

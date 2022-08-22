@@ -1,3 +1,5 @@
+
+
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,7 +14,7 @@ class CustomAppBar extends StatefulWidget {
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
-  DateTime _selectedDate = DateTime.now();
+  DateTime selectedDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +28,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
             width: 80,
             initialSelectedDate: DateTime.now(),
             selectionColor: Constantcolors.primaryColor,
-            // selectedTextColor: Colors.pink,
             monthTextStyle: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 13,
@@ -48,7 +49,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
               ),
             ),
             onDateChange: (date) {
-              _selectedDate=date;
+              selectedDate=date;
             },
           ),
         )
