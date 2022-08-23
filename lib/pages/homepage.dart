@@ -1,6 +1,8 @@
+import 'package:task_manager_app/controllers/task_controller.dart';
 import 'package:task_manager_app/exports/exports.dart';
 
 class Homepage extends StatefulWidget {
+  static const id = '/details_page';
   const Homepage({Key? key}) : super(key: key);
 
   @override
@@ -9,6 +11,7 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   // ignore: prefer_typing_uninitialized_variables
+
   var notifyHelper;
   @override
   void initState() {
