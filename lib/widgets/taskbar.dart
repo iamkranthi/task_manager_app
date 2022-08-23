@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:task_manager_app/widgets/add_task.dart';
-import 'package:task_manager_app/widgets/button.dart';
-import 'package:task_manager_app/widgets/text_style.dart';
+import 'package:task_manager_app/exports/exports.dart';
 
 class AddTaskBar extends StatelessWidget {
   const AddTaskBar({
@@ -31,10 +27,13 @@ class AddTaskBar extends StatelessWidget {
             ],
           ),
           MyButton(
-              label: "+Add Task",
-              onTap: () =>Get.to(const AddTaskPage())
-                
-              )
+            label: "+Add Task",
+            onTap: () {
+              Get.to(
+                () => const AddTaskPage(),
+              );
+            },
+          )
         ],
       ),
     );

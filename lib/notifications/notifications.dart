@@ -1,8 +1,6 @@
-// ignore_for_file: avoid_print, depend_on_referenced_packages
+// ignore_for_file: avoid_print
 
-import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:get/get.dart';
+import 'package:task_manager_app/exports/exports.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
@@ -76,18 +74,20 @@ class NotifyHelper {
       payload: 'It could be anything you pass',
     );
   }
-  scheduledNotification() async {
-     await flutterLocalNotificationsPlugin.zonedSchedule(
-         0,
-         '',
-         'theme changes 5 seconds ago',
-         tz.TZDateTime.now(tz.local).add(const Duration(seconds: 5)),
-         const NotificationDetails(
-             android: AndroidNotificationDetails('your channel id',
-                 'your channel name', )),
-         androidAllowWhileIdle: true,
-         uiLocalNotificationDateInterpretation:
-             UILocalNotificationDateInterpretation.absoluteTime);
 
-   }
+  scheduledNotification() async {
+    await flutterLocalNotificationsPlugin.zonedSchedule(
+        0,
+        '',
+        'theme changes 5 seconds ago',
+        tz.TZDateTime.now(tz.local).add(const Duration(seconds: 5)),
+        const NotificationDetails(
+            android: AndroidNotificationDetails(
+          'your channel id',
+          'your channel name',
+        )),
+        androidAllowWhileIdle: true,
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime);
+  }
 }

@@ -1,10 +1,6 @@
 
 
-import 'package:date_picker_timeline/date_picker_timeline.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:task_manager_app/themes/constant_colors.dart';
-import 'package:task_manager_app/widgets/taskbar.dart';
+import 'package:task_manager_app/exports/exports.dart';
 
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar({Key? key}) : super(key: key);

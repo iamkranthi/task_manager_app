@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:task_manager_app/themes/constant_colors.dart';
+import 'package:task_manager_app/exports/exports.dart';
 
 class Themes {
   static final light = ThemeData(

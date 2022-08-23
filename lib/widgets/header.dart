@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:task_manager_app/widgets/theme_mode_widget.dart';
+import 'package:task_manager_app/exports/exports.dart';
 
 class Header extends StatefulWidget {
   const Header({Key? key}) : super(key: key);
@@ -28,4 +27,3 @@ class _HeaderState extends State<Header> {
     );
   }
 }
-

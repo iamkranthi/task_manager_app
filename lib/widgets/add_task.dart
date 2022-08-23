@@ -1,10 +1,7 @@
-// ignore_for_file: no_leading_underscores_for_local_identifiers, avoid_print
+// ignore_for_file: avoid_print
 
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:task_manager_app/widgets/header.dart';
-import 'package:task_manager_app/widgets/text_field.dart';
-import 'package:task_manager_app/widgets/text_style.dart';
+import 'package:task_manager_app/exports/exports.dart';
 
 class AddTaskPage extends StatefulWidget {
   const AddTaskPage({Key? key}) : super(key: key);
@@ -124,15 +121,15 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
 //*datepicking method
   getDateFromUser(context) async {
-    DateTime? _pickerDate = await showDatePicker(
+    DateTime? pickerDate = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2015),
       lastDate: DateTime(2124),
     );
-    if (_pickerDate != null) {
+    if (pickerDate != null) {
       setState(() {
-        _selectedDate = _pickerDate;
+        _selectedDate = pickerDate;
       });
     } else {
       print("Something is wrong");
@@ -143,16 +140,16 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
   getTimeFromUser({required bool isStartTime}) async {
     var pickedTime = await _showTimePicker();
-    String _formatedTime = pickedTime.format();
+    String formatedTime = pickedTime.format();
     if (pickedTime == null) {
       print("Time canceled");
     } else if (isStartTime == true) {
       setState(() {
-        _startTime = _formatedTime;
+        _startTime = formatedTime;
       });
     } else if (isStartTime == false) {
       setState(() {
-        _endTime = _formatedTime;
+        _endTime = formatedTime;
       });
     }
   }

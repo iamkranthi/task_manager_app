@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:task_manager_app/exports/exports.dart';
 
 class ThemeService {
   final _box = GetStorage(); //*importing get storage in one varriable

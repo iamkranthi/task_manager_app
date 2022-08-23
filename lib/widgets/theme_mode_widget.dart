@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:task_manager_app/notifications/notifications.dart';
-import 'package:task_manager_app/themes/theme_service.dart';
+import 'package:task_manager_app/exports/exports.dart';
 class ThemeModeWidget extends StatelessWidget {
   const ThemeModeWidget({
     Key? key,
