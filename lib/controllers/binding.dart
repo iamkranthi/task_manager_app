@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class InitialBinding implements Bindings {
   @override
-  void dependencies() {
-     Get.lazyPut(() => TaskController());
+  void dependencies() async{
+     Get.lazyPut(() => TaskController,fenix: true);
   }
 }

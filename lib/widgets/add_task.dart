@@ -4,6 +4,8 @@ import 'package:task_manager_app/controllers/task_controller.dart';
 import 'package:task_manager_app/exports/exports.dart';
 import 'package:task_manager_app/models/task.dart';
 
+final TaskController _taskController = Get.put(TaskController());
+
 class AddTaskPage extends StatefulWidget {
   const AddTaskPage({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class AddTaskPage extends StatefulWidget {
 
 class _AddTaskPageState extends State<AddTaskPage> {
   final TextEditingController _titleController = TextEditingController();
-  final TaskController _taskController = Get.put(TaskController());
+
   final TextEditingController _noteController = TextEditingController();
   // ignore: prefer_final_fields
   DateTime _selectedDate = DateTime.now();
@@ -278,7 +280,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
   _validateDate() {
     if (_titleController.text.isNotEmpty && _noteController.text.isNotEmpty) {
       _addTasktoDb();
-      Get.toNamed(Homepage.id);
+       Get.offNamed(Homepage.id);
+     // Get.offAll(Homepage.id);
     } else if (_titleController.text.isEmpty || _noteController.text.isEmpty) {
       Get.snackbar(
         "Requried",
@@ -308,6 +311,27 @@ class _AddTaskPageState extends State<AddTaskPage> {
         isCompleted: 0,
       ),
     );
-    print("My id is " + "$value");
+    print("My id is " "$value");
   }
+}
+
+showTasks() {
+  return Expanded(
+    child: Obx(
+      () {
+        return ListView.builder(
+          itemCount: _taskController.taskList.length,
+          itemBuilder: (_, context) {
+            print(_taskController.taskList.length);
+            return Container(
+              width: 100,
+              height: 50,
+              color: Colors.blueGrey,
+              margin: const EdgeInsets.only(bottom: 10),
+            );
+          },
+        );
+      },
+    ),
+  );
 }
